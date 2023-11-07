@@ -1,0 +1,600 @@
+@font-face {
+	font-family: "BarboskinsAkzident";
+	src: url("../font/BarboskinsAkzident.otf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: BarboskinsAkzident;
+}
+* {
+	box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	margin: 0;
+	padding: 0;
+}
+button {
+	cursor: pointer;
+}
+.worktable {
+	background: url(../img/BarboskinyWindogsWallpaper.png) center / cover no-repeat;
+	height: 100%;
+	display: grid;
+	grid-template: repeat(3, 80px) / 80px;
+	grid-auto-rows: 80px;
+}
+.icon {
+	padding: 10px;
+	background-color: transparent;
+	border: none;
+	&:focus {
+		background-color: #99d9eaa2;
+	}
+	img {
+		width: 100%;
+	}
+}
+.startmenu {
+	position: absolute;
+	bottom: 50px;
+	display: flex;
+	display: none;
+	flex-direction: column;
+	&:hover {
+		display: flex;
+	}
+	// .startmenu__header
+
+	&__header {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		background-color: #3f48cc;
+	}
+
+	// .startmenu__logo
+
+	&__logo {
+		width: 67px;
+		height: 67px;
+		img {
+			width: 100%;
+		}
+	}
+
+	// .startmenu__name
+
+	&__name {
+		color: white;
+		font-weight: 700;
+	}
+
+	// .startmenu__main
+
+	&__main {
+		background-color: #efe4b0;
+		display: flex;
+	}
+
+	// .startmenu__item
+
+	&__item {
+		flex: 1;
+		display: grid;
+	}
+
+	// .startmenu__btn
+
+	&__btn {
+		background-color: transparent;
+		border: none;
+		display: flex;
+		align-items: center;
+		gap: 15px;
+	}
+
+	// .startmenu__footer
+
+	&__footer {
+		background-color: #7092be;
+		text-align: end;
+		padding: 5px;
+	}
+
+	// .startmenu__lock-btn
+
+	&__lock-btn {
+		background: url(../img/theme/startmenu/icon/15.png);
+		width: 45px;
+		height: 45px;
+	}
+
+	// .startmenu__off-btn
+
+	&__off-btn {
+		background: url(../img/theme/startmenu/icon/16.png);
+		width: 45px;
+		height: 45px;
+	}
+}
+.divider {
+	flex: 0 0 5px;
+	width: 5px;
+	background-color: #000;
+}
+
+.footer {
+	// .footer__startbtn
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: #99d9ea;
+	height: 50px;
+	bottom: 1px;
+
+	&__startbtn {
+		width: 10%;
+		min-width: 150px;
+		height: 100%;
+		background: url(../img/theme/icons/startbuttoneng.jpg) center center / cover no-repeat;
+		&:hover,
+		&:focus {
+			~ .startmenu {
+				display: flex;
+			}
+		}
+	}
+}
+
+@keyframes animationScale {
+	0% {
+		transform: translate(-50%, -50%) scale(0.5);
+	}
+	100% {
+		transform: translate(-50%, -50%) scale(1);
+	}
+}
+
+// window
+.window {
+	position: absolute;
+	box-shadow: 0px 0px 5px 3px black;
+	top: 50%;
+	left: 50%;
+	background-color: #fff;
+
+	transform: translate(-50%, -50%); // .window__settings
+	&__settings {
+	}
+
+	// .window__header
+
+	&__header {
+		background-color: #327dea;
+		padding: 5px 10px;
+		display: flex;
+		gap: 10px;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	// .window__name
+
+	&__name {
+		color: #fff;
+		font-size: 1.5em;
+	}
+
+	// .window__close-btn
+
+	&__close-btn {
+		width: 45px;
+		height: 45px;
+		background: url(../img/theme/window/settings/windowthemes/close.png) center / cover no-repeat;
+	}
+
+	// .window__main
+
+	&__main {
+	}
+}
+.controls-header {
+	flex: 1 0 100%;
+	display: flex;
+	gap: 10px;
+	max-height: 70px;
+	margin: 0 -5px -5px -5px;
+	background-color: #fff;
+
+	// .controls-header__btn
+
+	&__btn {
+		background-color: transparent;
+		border: 5px solid black;
+		border-radius: 10px;
+	}
+
+	// .controls-header__search
+
+	&__search {
+		flex-grow: 1;
+		display: flex;
+		input {
+			background-color: transparent;
+			border: 5px solid black;
+			border-radius: 10px;
+			font-size: 36px;
+			font-weight: 700;
+		}
+	}
+}
+
+.aside {
+	// .aside__name
+	border-right: 5px solid black;
+	max-width: 195px;
+	padding: 20px 0;
+	.divider {
+		width: 100%;
+		height: 5px;
+	}
+	&__name {
+		display: grid;
+		padding: 20px;
+		grid-template-columns: minmax(25px, 56px) 1fr;
+		align-items: center;
+		font-weight: 700;
+		gap: 20px;
+		text-transform: capitalize;
+	}
+
+	// .aside__list
+
+	&__list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	// .aside__item
+
+	&__item {
+		padding: 10px;
+	}
+
+	// .aside__btn
+
+	&__btn {
+		background-color: transparent;
+		border: none;
+		display: grid;
+		grid-template-columns: minmax(25px, 56px) 1fr;
+		align-items: center;
+		font-weight: 700;
+		gap: 20px;
+	}
+}
+
+.settings {
+	// .settings__tabs
+	// display: none;
+	&__tabs {
+		display: flex;
+		justify-content: space-around;
+		border-bottom: 5px solid black;
+		padding-top: 5px;
+	}
+
+	// .settings__tab
+
+	&__tab {
+		background-color: transparent;
+		border: 5px solid black;
+		padding: 10px 25px;
+		margin-bottom: -5px;
+		cursor: pointer;
+		&--active {
+			border-bottom: 5px solid #fff;
+		}
+	}
+
+	// .settings__tab-content
+
+	&__tab-content {
+		display: none;
+		max-height: 300px;
+		overflow-y: scroll;
+
+		&--active {
+			display: block;
+		}
+	}
+
+	// .settings__item
+
+	&__item {
+		width: 255px;
+		background-color: transparent;
+		border: none;
+		img {
+			width: 100%;
+		}
+		&:focus {
+			background-color: grey;
+			color: white;
+		}
+	}
+
+	// .settings__label
+
+	&__label {
+	}
+
+	// .settings__btns
+
+	&__btns {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 10px;
+		padding: 10px;
+	}
+
+	// .settings__btn
+
+	&__btn {
+		border: 5px solid black;
+		padding: 5px 25px;
+	}
+}
+
+//! themes
+.theme {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+}
+.wallpaper {
+	padding: 20px;
+	display: grid;
+	grid-template: 150px / repeat(4, 1fr);
+	grid-auto-rows: 150px;
+	gap: 10px;
+	&__img {
+		img {
+			object-fit: cover;
+			object-position: center;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+.display {
+	display: grid;
+	grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+	padding: 50px;
+	// .display__icon
+
+	&__icon {
+		grid-column: span 2;
+		text-align: center;
+	}
+
+	// .display__item
+
+	&__item {
+		&.select {
+			width: 200px;
+			.choices {
+				// border: 1px solid black;
+
+				&__input {
+					// border-bottom: 5px solid black;
+				}
+				&__list {
+					&--dropdown {
+						border: 5px solid black;
+						height: 200px;
+						overflow-y: scroll;
+						.choices__item {
+							border-bottom: 5px solid black;
+							border-top: 5px solid black;
+						}
+					}
+				}
+				&__inner {
+					border: 5px solid black;
+				}
+			}
+		}
+	}
+}
+.allPrograms {
+	position: relative;
+	&:hover {
+		.allPrograms__container {
+			display: block;
+		}
+	}
+
+	&__container {
+		display: none;
+		position: absolute;
+		bottom: 0;
+		right: -120%;
+		background-color: #fff;
+	}
+	// .allPrograms__items
+
+	&__items {
+		padding: 0;
+		&:first-child {
+			border-bottom: 5px solid black;
+		}
+	}
+
+	// .allPrograms__item
+
+	&__item {
+		display: grid;
+		padding: 0 10px;
+		grid-template-columns: 35px 200px 30px;
+		grid-auto-rows: 35px;
+		justify-content: space-between;
+		gap: 20px 5px;
+	}
+
+	// .allPrograms__icon
+
+	&__icon {
+		flex: 0 0 35px;
+		height: 30px;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+	}
+
+	// .allPrograms__name
+
+	&__name {
+		text-transform: capitalize;
+		flex: 1 0 auto;
+	}
+
+	// .allPrograms__arrow
+
+	&__arrow {
+		flex: 0 0 30px;
+		height: 20px;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+	}
+}
+
+.windogsAero {
+	.window {
+		animation-name: animationScale;
+		animation-duration: 0.5s;
+	}
+	.footer {
+		background-color: #99d9ea;
+	}
+	.window__header {
+		background-color: #327dea;
+	}
+	.footer__startbtn {
+		background: url(../img/theme/icons/startbuttoneng.jpg) center center/cover no-repeat;
+	}
+}
+.barboskinBasic {
+	.footer {
+		background-color: #99d9ea;
+	}
+	.window__header {
+		background-color: #b5e61d;
+	}
+}
+.barboskinClassic {
+	.footer {
+		background-color: #bdbdbd;
+	}
+	.window__header {
+		background-color: #3f48cc;
+	}
+	.footer__startbtn {
+		background: url(../img/theme/start/startbuttonengclassic.png) center center/cover no-repeat;
+	}
+	.window__close-btn {
+		background: url(../img/theme/v/xdf.png) center center/cover no-repeat;
+	}
+	.startmenu__footer {
+		background-color: #bdbdbd;
+	}
+	.allPrograms__container {
+		background-color: #bdbdbd;
+	}
+	.startmenu__main {
+		background-color: #bdbdbd;
+		display: flex;
+	}
+	.settings__btns {
+		background-color: #bdbdbd;
+	}
+	.element {
+		background-color: #bdbdbd;
+	}
+}
+
+.windowsXP {
+	.footer {
+		background: url(../img/theme/winxp/1.png) center center/cover no-repeat;
+	}
+	.window__header {
+		background: url(../img/theme/winxp/1.png) center center/cover no-repeat;
+	}
+}
+.windogsAcer {
+	.footer {
+		background-color: red;
+	}
+	.window__header {
+		background-color: red;
+	}
+	.footer__startbtn {
+		background: url(img\theme\start\startbuttonenga.png) center center/cover no-repeat;
+	}
+}
+.barboskinClassicnothemes {
+	.footer {
+		background-color: #78a6b2;
+	}
+	.window__header {
+		background-color: #3f48cc;
+	}
+	.footer__startbtn {
+		background: url(../img/theme/window/bf8.png) center center/cover no-repeat;
+	}
+	.window__close-btn {
+		background: url(../img/theme/v/xdf.png) center center/cover no-repeat;
+	}
+	.startmenu__footer {
+		background-color: #bdbdbd;
+	}
+	.allPrograms__container {
+		background-color: #bdbdbd;
+	}
+	.startmenu__main {
+		background-color: #bdbdbd;
+		display: flex;
+	}
+	.settings__btns {
+		background-color: #bdbdbd;
+	}
+	.element {
+		background-color: #bdbdbd;
+	}
+}
+@import "screens/safemod";
+@import "screens/recovery";
+@import "screens/bootManager";
+@import "screens/installations";
+@import "./elements/shutdown/shutdown";

@@ -1,0 +1,220 @@
+.installations {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: url("../img/setup/bg.png") center / cover no-repeat;
+}
+
+.setup {
+	border: 5px solid rgb(55, 5, 253);
+	width: 70%;
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		gap: 20px;
+		align-items: center;
+		background-color: rgb(55, 5, 253);
+		color: #fff;
+		font-size: 44px;
+		padding: 5px;
+	}
+	&__closeBtn {
+		font-size: 44px;
+	}
+	&__content {
+		background: url("../img/setup/bg.png") center / cover no-repeat;
+		display: grid;
+		grid-template-columns: 1fr;
+		place-items: center;
+		padding: 20px;
+		gap: 20px;
+		font-size: 44px;
+		color: #fff;
+		&-lightBG {
+			background: #fff;
+			display: block;
+		}
+	}
+	&__logo {
+		width: 200px;
+		height: 200px;
+		background: url("../img/setup/logo-removebg-preview.png") center / cover no-repeat;
+	}
+	&__title {
+		font-weight: 900;
+		font-size: 34px;
+		margin-bottom: 40px;
+	}
+	&__box {
+		display: grid;
+		gap: 40px;
+	}
+	&__btn {
+		background-color: transparent;
+		border: 5px solid #fff;
+		font-size: 36px;
+
+		&-upgrade {
+			background: url("../img/setup/icons/UP.png") center / cover no-repeat;
+			width: 250px;
+			height: 150px;
+			display: block;
+			margin-bottom: 40px;
+		}
+		&-custom {
+			background: url("../img/setup/icons/c.png") center / cover no-repeat;
+			width: 250px;
+			height: 150px;
+			display: block;
+		}
+	}
+	&__language-select {
+		font-size: 24px;
+	}
+	&__btnNext {
+		font-size: 24px;
+		margin-top: 150px;
+	}
+	&__repairBtn {
+		font-size: 30px;
+		background-color: transparent;
+		border: none;
+		place-self: start;
+	}
+	&__read-me {
+		color: #000;
+		place-self: start;
+		font-size: 36px;
+	}
+	&__list {
+		border: 5px solid #000;
+		list-style-type: none;
+		place-self: start;
+	}
+	&__li {
+		color: #000;
+		font-size: 24px;
+		&:hover {
+			background: rgba(0, 0, 0, 0.514);
+			cursor: pointer;
+		}
+		&-active {
+			background: rgba(0, 0, 0, 0.514);
+		}
+	}
+	&__label {
+		color: #000;
+		font-weight: normal;
+		font-size: 24px;
+	}
+	&__checkBox-label {
+		display: flex;
+		align-items: center;
+		gap: 40px;
+		input {
+			width: 40px;
+			border: 5px solid #000;
+			height: 40px;
+		}
+	}
+	&__footer {
+		place-self: end;
+		display: flex;
+		justify-content: space-between;
+	}
+	&__btnNext {
+		flex: 0 0 200px;
+		width: 200px;
+		border: 5px solid #000;
+	}
+	&__progres {
+		&-bar {
+			position: absolute;
+			bottom: 60px;
+			width: 100%;
+			height: 20px;
+			left: 0;
+			background-color: grey;
+		}
+		&-inner {
+			background-color: lime;
+			height: 100%;
+		}
+	}
+	&__bread-dots {
+		position: absolute;
+		bottom: 0;
+		left: 40px;
+		display: flex;
+		gap: 40px;
+	}
+	&__bread-dot {
+		font-size: 24px;
+	}
+}
+
+.storage-ssd {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	&__icon {
+		background: url("../img/setup/icons/dicon.png") center / cover no-repeat;
+		width: 200px;
+		height: 50px;
+	}
+	&__text {
+		font-size: 24px;
+	}
+	&__deleteBtn {
+	}
+	&__newBtn {
+	}
+}
+.contentBox {
+	margin: 20px;
+	padding: 20px;
+	border: 5px solid #000;
+	height: 400px;
+}
+.posRight {
+	margin-left: auto;
+}
+.x {
+	font-size: 36px;
+	color: red;
+}
+.circle {
+	display: inline-block;
+	border-radius: 100%;
+	width: 40px;
+	height: 40px;
+	background-color: yellow;
+}
+
+.text-black {
+	color: black;
+}
+.done {
+	color: green;
+}
+
+.percentage {
+	display: inline-block;
+	padding-left: 100px;
+	color: black;
+}
+
+.restartBar {
+	border: 1px solid black;
+	color: black;
+	&__inner {
+		height: 20px;
+		background-color: green;
+	}
+	&__timer {
+		color: black;
+	}
+}

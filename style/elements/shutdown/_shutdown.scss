@@ -1,0 +1,67 @@
+.shutdown {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: 10;
+	transform: translate(-50%, -50%);
+	box-shadow: 0 3px 5px black;
+	&__header {
+		background-color: #00a2e8;
+		padding: 5px 10px;
+		color: white;
+		letter-spacing: 2px;
+		font-size: 26px;
+	}
+	&__logo {
+		position: relative;
+		padding: 0;
+		margin: 0;
+		line-height: 0;
+		img {
+			object-fit: cover;
+			object-position: center;
+			height: 100%;
+		}
+	}
+	&__footer {
+		background-color: #ffffff;
+	}
+	&__label {
+		display: flex;
+		gap: 30px;
+		padding: 0 30px;
+	}
+	&__select {
+		flex: 1 0;
+		align-self: center;
+		font-size: 30px;
+		font-weight: 700;
+		text-transform: capitalize;
+		border: 3px solid black;
+	}
+	&__option {
+		border-radius: 0;
+	}
+	&__buttons {
+		padding: 15px;
+		text-align: end;
+		&-btn {
+			text-transform: capitalize;
+			border: 3px solid black;
+			font-size: 20px;
+			font-weight: 700;
+			&:first-child {
+				margin-right: 15px;
+			}
+		}
+	}
+}
+
+.overlay {
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+}
